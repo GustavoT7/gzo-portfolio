@@ -603,97 +603,104 @@
   /* ===== MOBILE GERAL (≤768px) ===== */
   @media (max-width: 768px) {
     nav, .hero-body, .hero-footer, section, footer { padding-left: 24px; padding-right: 24px; }
-    section { padding-top: 64px; padding-bottom: 64px; }
+    section { padding-top: 80px; padding-bottom: 80px; }
+    h2 { margin-bottom: 40px; }
 
     .hero-stats { flex-direction: column; width: 100%; }
-    .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 20px; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 18px 22px; }
     .stat:last-child { border-bottom: none; }
 
     .problema-grid, .features-grid, .tech-grid { grid-template-columns: 1fr; }
-    .roi-grid { grid-template-columns: 1fr; gap: 24px; }
+    .roi-grid { grid-template-columns: 1fr; gap: 28px; }
 
-    .flow-item { grid-template-columns: 32px 1fr auto; gap: 12px; padding: 16px 18px; }
+    .problema-item, .feature-card { padding: 28px; }
+
+    .flow-item { grid-template-columns: 32px 1fr auto; gap: 12px; padding: 20px 22px; }
     .flow-tag { font-size: 9px; padding: 3px 8px; }
 
     h1 { letter-spacing: -2px; }
 
-    .custom-section { padding: 36px 20px; }
+    .custom-section { padding: 44px 24px; }
     .custom-tags { gap: 8px; }
     .custom-tag { font-size: 10px; padding: 7px 12px; }
 
-    .sim-body { padding: 18px; }
-    .sim-item-inner { padding: 16px 18px; gap: 12px; }
+    .sim-body { padding: 24px; }
+    .sim-item-inner { padding: 18px 20px; gap: 12px; }
+    .sim-item { margin-bottom: 14px; }
     .sim-price { text-align: right; }
 
-    .sim-total-bar { flex-direction: column; align-items: stretch; padding: 20px; }
+    .sim-total-bar { flex-direction: column; align-items: stretch; padding: 24px; gap: 20px; }
     .sim-total-value { font-size: 28px; }
-    .btn-whatsapp { width: 100%; justify-content: center; text-align: center; white-space: normal; }
+    .btn-whatsapp { width: 100%; justify-content: center; text-align: center; white-space: normal; padding: 18px 24px; }
 
-    footer { flex-direction: column; gap: 20px; align-items: flex-start; text-align: left; }
+    footer { flex-direction: column; gap: 24px; align-items: flex-start; text-align: left; padding-top: 44px; padding-bottom: 44px; }
     .footer-contact { text-align: left; }
   }
 
   /* ===== CELULARES (≤480px) ===== */
   @media (max-width: 480px) {
-    nav, .hero-body, .hero-footer, section, footer { padding-left: 18px; padding-right: 18px; }
-    section { padding-top: 48px; padding-bottom: 48px; }
+    nav, .hero-body, .hero-footer, section, footer { padding-left: 20px; padding-right: 20px; }
+    section { padding-top: 64px; padding-bottom: 64px; }
 
-    nav { padding-top: 20px; padding-bottom: 20px; }
+    nav { padding-top: 22px; padding-bottom: 22px; }
     .nav-tag { font-size: 9px; letter-spacing: 1px; max-width: 50%; }
 
-    .hero-body { padding-top: 48px; padding-bottom: 40px; }
-    .hero-eyebrow { font-size: 10px; letter-spacing: 2px; margin-bottom: 16px; }
-    h1 { font-size: clamp(34px, 11vw, 48px); letter-spacing: -1.5px; margin-bottom: 20px; }
-    .hero-sub { font-size: 15px; margin-bottom: 32px; }
+    .hero-body { padding-top: 56px; padding-bottom: 48px; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 2px; margin-bottom: 20px; }
+    h1 { font-size: clamp(34px, 11vw, 48px); letter-spacing: -1.5px; margin-bottom: 24px; }
+    .hero-sub { font-size: 15px; margin-bottom: 36px; }
 
     .hero-stats { border-radius: 2px; }
     .stat-num { font-size: 26px; }
     .stat-label { font-size: 10px; }
 
-    .hero-footer { flex-direction: column; gap: 10px; align-items: flex-start; padding-top: 18px; padding-bottom: 18px; }
+    .hero-footer { flex-direction: column; gap: 12px; align-items: flex-start; padding-top: 20px; padding-bottom: 20px; }
     .client-badge { font-size: 11px; }
     .nav-tag { text-align: left; max-width: 100%; }
 
-    h2 { font-size: clamp(23px, 7vw, 32px); margin-bottom: 32px; }
-    h3 { font-size: 17px; }
+    h2 { font-size: clamp(23px, 7vw, 32px); margin-bottom: 36px; }
+    h3 { font-size: 17px; margin-bottom: 10px; }
 
-    .problema-item, .feature-card { padding: 22px 20px; }
-    .problema-icon { font-size: 24px; margin-bottom: 12px; }
-    .problema-item p, .feature-card p { font-size: 13px; }
+    .problema-item, .feature-card { padding: 26px 22px; }
+    .problema-icon { font-size: 24px; margin-bottom: 14px; }
+    .problema-item p, .feature-card p { font-size: 13.5px; margin-top: 10px; }
 
-    .tech-item { padding: 18px; }
+    .tech-item { padding: 20px; }
     .tech-value { font-size: 13px; }
 
-    .flow-item { grid-template-columns: 28px 1fr; padding: 14px 16px; }
+    .flow-item { grid-template-columns: 28px 1fr; padding: 18px 18px; }
     .flow-tag { display: none; }
     .flow-name { font-size: 14px; }
 
-    .roi-list { padding: 18px; }
-    .roi-list li { font-size: 13px; }
+    .roi-list { padding: 22px; gap: 14px; }
+    .roi-list li { font-size: 13.5px; }
+    .roi-header { padding: 16px 20px; }
 
-    .custom-section h2 { font-size: clamp(21px, 7vw, 28px); }
-    .custom-section p { font-size: 14px; margin-bottom: 28px; }
+    .custom-section h2 { font-size: clamp(21px, 7vw, 28px); margin-bottom: 18px; }
+    .custom-section p { font-size: 14.5px; margin-bottom: 30px; }
 
-    .sim-header { padding: 18px 20px; }
+    .sim-header { padding: 20px 22px; }
     .sim-header-title { font-size: 16px; }
-    .sim-header-sub { font-size: 11px; }
-    .sim-body { padding: 14px; }
+    .sim-header-sub { font-size: 11px; margin-top: 4px; }
+    .sim-body { padding: 18px; }
+    .sim-item { margin-bottom: 12px; }
 
-    .sim-item-inner { flex-wrap: wrap; }
+    .sim-item-inner { flex-wrap: wrap; padding: 18px 20px; }
     .sim-info { flex-basis: 100%; order: 1; }
     .sim-radio { order: 0; }
-    .sim-price { order: 2; flex-basis: 100%; text-align: left; padding-left: 36px; margin-top: 4px; }
+    .sim-price { order: 2; flex-basis: 100%; text-align: left; padding-left: 36px; margin-top: 8px; }
     .sim-price small { display: inline; margin-left: 6px; }
 
     .sim-name { font-size: 14px; }
-    .sim-desc { font-size: 11.5px; }
+    .sim-desc { font-size: 12px; margin-top: 5px; }
     .sim-price { font-size: 19px; }
     .sim-badge { font-size: 8px; }
 
+    .sim-total-bar { gap: 18px; padding: 22px; }
     .sim-total-value { font-size: 24px; }
-    .btn-whatsapp { font-size: 13px; padding: 14px 18px; line-height: 1.3; }
+    .btn-whatsapp { font-size: 13px; padding: 16px 20px; line-height: 1.4; }
 
-    footer { padding-top: 32px; padding-bottom: 32px; }
+    footer { padding-top: 40px; padding-bottom: 40px; }
   }
 
   /* ===== TELAS MUITO PEQUENAS (≤360px) ===== */

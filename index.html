@@ -34,12 +34,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 0;
     position: relative;
     overflow: hidden;
   }
@@ -167,7 +165,7 @@
 
   .client-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent); 
+    background: var(--accent);
     box-shadow: 0 0 8px var(--accent);
     animation: pulse 2s infinite;
   }
@@ -177,7 +175,6 @@
     50% { opacity: 0.4; }
   }
 
-  /* ── SECTIONS ── */
   section {
     padding: 96px 48px;
     border-top: 1px solid var(--border);
@@ -207,7 +204,6 @@
     margin-bottom: 8px;
   }
 
-  /* ── PROBLEMA ── */
   .problema-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,13 +219,9 @@
     padding: 32px;
   }
 
-  .problema-icon {
-    font-size: 28px; margin-bottom: 16px;
-  }
-
+  .problema-icon { font-size: 28px; margin-bottom: 16px; }
   .problema-item p { font-size: 14px; color: #999; line-height: 1.6; margin-top: 8px; }
 
-  /* ── SOLUÇÃO / FEATURES ── */
   .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -263,10 +255,7 @@
 
   .feature-card p { font-size: 13px; color: #888; line-height: 1.6; margin-top: 6px; }
 
-  /* ── FLUXO ── */
-  .flow-list {
-    display: flex; flex-direction: column; gap: 2px;
-  }
+  .flow-list { display: flex; flex-direction: column; gap: 2px; }
 
   .flow-item {
     display: grid;
@@ -284,9 +273,7 @@
     font-weight: 600;
   }
 
-  .flow-name {
-    font-size: 15px; font-weight: 500;
-  }
+  .flow-name { font-size: 15px; font-weight: 500; }
 
   .flow-tag {
     font-family: 'JetBrains Mono', monospace;
@@ -302,7 +289,6 @@
     border-color: rgba(232,255,71,0.2);
   }
 
-  /* ── TECH ── */
   .tech-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -330,7 +316,6 @@
     font-weight: 600;
   }
 
-  /* ── ROI ── */
   .roi-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -373,75 +358,202 @@
     font-size: 14px;
   }
 
-  /* ── PLANOS ── */
-  .planos-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--border);
-    border: 1px solid var(--border);
+  /* ── PERSONALIZAÇÃO ── */
+  .custom-section {
+    background: linear-gradient(135deg, #0f1a00 0%, #0a0a0a 100%);
+    border: 1px solid rgba(232,255,71,0.15);
+    border-radius: 4px;
+    padding: 56px;
+    text-align: center;
+  }
+
+  .custom-section h2 { margin-bottom: 16px; }
+
+  .custom-section p {
+    font-size: 17px; color: #aaa;
+    max-width: 580px; margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .custom-tags {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center;
+  }
+
+  .custom-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; padding: 8px 16px;
+    border: 1px solid rgba(232,255,71,0.2);
     border-radius: 2px;
+    color: var(--accent);
+    background: rgba(232,255,71,0.05);
+    letter-spacing: 1px;
+  }
+
+  /* ── SIMULADOR ── */
+  .simulador {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
     overflow: hidden;
   }
 
-  .plano {
-    background: var(--card);
-    padding: 40px;
+  .sim-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    background: #0f0f0f;
   }
 
-  .plano.destaque {
-    background: #141a00;
+  .sim-header-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px; font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .sim-header-sub {
+    font-size: 12px; color: var(--muted);
+  }
+
+  .sim-body { padding: 32px; }
+
+  .sim-item {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .sim-item.selected { border-color: var(--accent); }
+  .sim-item.locked { border-color: rgba(232,255,71,0.3); background: rgba(232,255,71,0.03); }
+
+  .sim-item-inner {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .sim-item.locked .sim-item-inner { cursor: default; }
+
+  .sim-radio {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s;
+  }
+
+  .sim-item.selected .sim-radio,
+  .sim-item.locked .sim-radio {
+    border-color: var(--accent);
+  }
+
+  .sim-radio-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: none;
+  }
+
+  .sim-item.selected .sim-radio-dot,
+  .sim-item.locked .sim-radio-dot { display: block; }
+
+  .sim-info { flex: 1; }
+
+  .sim-name {
+    font-size: 15px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .sim-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; padding: 2px 8px;
+    border-radius: 2px; letter-spacing: 1px;
+    background: rgba(232,255,71,0.1);
+    color: var(--accent);
     border: 1px solid rgba(232,255,71,0.2);
   }
 
-  .plano-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 24px;
-    display: block;
-  }
+  .sim-desc { font-size: 12px; color: #777; margin-top: 3px; }
 
-  .plano.destaque .plano-tag { color: var(--accent); }
-
-  .plano-preco {
-    margin-bottom: 8px;
-  }
-
-  .plano-preco .valor {
+  .sim-price {
     font-family: 'Syne', sans-serif;
-    font-size: 48px; font-weight: 800;
-    letter-spacing: -2px;
+    font-size: 22px; font-weight: 800;
     color: var(--white);
+    text-align: right;
+    white-space: nowrap;
   }
 
-  .plano.destaque .plano-preco .valor { color: var(--accent); }
-
-  .plano-preco .periodo {
-    font-size: 13px; color: var(--muted);
+  .sim-price small {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--muted);
+    font-weight: 400; display: block;
   }
 
-  .plano-desc {
-    font-size: 13px; color: #777;
-    margin-bottom: 32px; line-height: 1.6;
+  .sim-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
   }
 
-  .plano-items { display: flex; flex-direction: column; gap: 10px; }
-
-  .plano-item {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 13px; color: #aaa;
+  .sim-section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 12px;
   }
 
-  .plano-item::before {
-    content: '—'; color: var(--border);
-    flex-shrink: 0;
+  .sim-total-bar {
+    background: #0f0f0f;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
   }
 
-  .plano.destaque .plano-item::before { content: '✓'; color: var(--accent); }
+  .sim-total-info { flex: 1; }
 
-  /* ── FOOTER ── */
+  .sim-total-label {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .sim-total-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px; font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .sim-total-sub {
+    font-size: 11px; color: #666;
+    margin-top: 4px;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: 'Syne', sans-serif;
+    font-size: 15px; font-weight: 800;
+    padding: 16px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.1s;
+    border: none; cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-whatsapp:active { transform: translateY(0); }
+
+  .full-border { border-top: 1px solid var(--border); max-width: 100%; }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 48px;
@@ -462,28 +574,25 @@
     text-align: right; line-height: 1.8;
   }
 
-  /* ── DIVIDER ── */
-  .full-border {
-    border-top: 1px solid var(--border);
-    max-width: 100%;
-  }
-
   @media (max-width: 768px) {
     nav, .hero-body, .hero-footer, section, footer { padding-left: 24px; padding-right: 24px; }
     .hero-stats { flex-direction: column; width: 100%; }
     .stat { border-right: none; border-bottom: 1px solid var(--border); }
     .stat:last-child { border-bottom: none; }
-    .problema-grid, .features-grid, .tech-grid, .planos-grid { grid-template-columns: 1fr; }
+    .problema-grid, .features-grid, .tech-grid { grid-template-columns: 1fr; }
     .roi-grid { grid-template-columns: 1fr; }
     .flow-item { grid-template-columns: 40px 1fr; }
     .flow-tag { display: none; }
     h1 { letter-spacing: -2px; }
+    .custom-section { padding: 32px 24px; }
+    .sim-body { padding: 20px; }
+    .sim-total-bar { flex-direction: column; align-items: flex-start; }
+    .btn-whatsapp { width: 100%; justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-bg-glow"></div>
@@ -530,7 +639,6 @@
 
 <div class="full-border"></div>
 
-<!-- PROBLEMA -->
 <section>
   <div class="section-eyebrow">O problema</div>
   <h2>Controle manual<br>tem um custo invisível</h2>
@@ -558,7 +666,6 @@
   </div>
 </section>
 
-<!-- SOLUÇÃO -->
 <section>
   <div class="section-eyebrow">A solução</div>
   <h2>Cada pedido rastreado,<br>cada etapa registrada</h2>
@@ -576,12 +683,12 @@
     <div class="feature-card">
       <div class="feature-num">03</div>
       <h3>Integração com planilha</h3>
-      <p>A planilha já usada pela equipe continua funcionando. Ao editar qualquer linha, o sistema é atualizado automaticamente via webhook em tempo real.</p>
+      <p>A planilha já usada pela equipe continua funcionando. Ao editar qualquer linha, o sistema é atualizado automaticamente em tempo real.</p>
     </div>
     <div class="feature-card">
       <div class="feature-num">04</div>
       <h3>Dashboard do gerente</h3>
-      <p>Visão completa de todos os pedidos em produção — filtros por setor, prioridade e status. Equivalente à planilha atual, mas vivo e sempre atualizado.</p>
+      <p>Visão completa de todos os pedidos em produção — filtros por setor, prioridade e status. Sempre atualizado, sem precisar perguntar pra ninguém.</p>
     </div>
     <div class="feature-card">
       <div class="feature-num">05</div>
@@ -596,7 +703,6 @@
   </div>
 </section>
 
-<!-- FLUXO -->
 <section>
   <div class="section-eyebrow">Fluxo de produção</div>
   <h2>Sete setores,<br>um sistema</h2>
@@ -611,7 +717,6 @@
   </div>
 </section>
 
-<!-- TECH -->
 <section>
   <div class="section-eyebrow">Tecnologia</div>
   <h2>Stack profissional,<br>infraestrutura sólida</h2>
@@ -627,7 +732,6 @@
   </div>
 </section>
 
-<!-- ROI -->
 <section>
   <div class="section-eyebrow">Valor gerado</div>
   <h2>Antes e depois<br>do sistema</h2>
@@ -659,44 +763,88 @@
   </div>
 </section>
 
-<!-- PLANOS -->
+<!-- PERSONALIZAÇÃO -->
+<section>
+  <div class="custom-section">
+    <div class="section-eyebrow" style="justify-content:center;display:flex;">Feito pra você</div>
+    <h2 style="margin-bottom:16px;">Deixe a sua empresa<br>com a sua cara!</h2>
+    <p>Fazemos automações e personalizações do jeito que você quiser. O sistema cresce junto com o seu negócio — novas funcionalidades, integrações e ajustes sempre que precisar.</p>
+    <div class="custom-tags">
+      <span class="custom-tag">Relatórios personalizados</span>
+      <span class="custom-tag">Novas integrações</span>
+      <span class="custom-tag">App mobile</span>
+      <span class="custom-tag">Notificações automáticas</span>
+      <span class="custom-tag">Controle financeiro</span>
+      <span class="custom-tag">Portal do cliente</span>
+      <span class="custom-tag">E muito mais...</span>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULADOR -->
 <section>
   <div class="section-eyebrow">Investimento</div>
   <h2>Simples e previsível</h2>
-  <div class="planos-grid">
-    <div class="plano">
-      <span class="plano-tag">Implantação única</span>
-      <div class="plano-preco">
-        <span class="valor">R$ 700</span>
-      </div>
-      <p class="plano-desc">Configuração completa do sistema personalizado para a Gráfica Zona Oeste, com treinamento da equipe.</p>
-      <div class="plano-items">
-        <div class="plano-item">Sistema configurado e funcionando</div>
-        <div class="plano-item">Migração dos dados existentes</div>
-        <div class="plano-item">Integração com planilha atual</div>
-        <div class="plano-item">Treinamento gerente e funcionários</div>
-        <div class="plano-item">QR Codes impressos por setor</div>
-      </div>
+
+  <div class="simulador">
+    <div class="sim-header">
+      <div class="sim-header-title">Monte seu plano</div>
+      <div class="sim-header-sub">Selecione a opção de manutenção que faz mais sentido para você</div>
     </div>
-    <div class="plano destaque">
-      <span class="plano-tag">✦ Manutenção mensal</span>
-      <div class="plano-preco">
-        <span class="valor">R$ 300</span>
-        <span class="periodo">/mês</span>
+    <div class="sim-body">
+
+      <div class="sim-section-label">Implantação — obrigatório</div>
+      <div class="sim-item locked">
+        <div class="sim-item-inner">
+          <div class="sim-radio"><div class="sim-radio-dot"></div></div>
+          <div class="sim-info">
+            <div class="sim-name">Implantação completa <span class="sim-badge">INCLUSO</span></div>
+            <div class="sim-desc">Configuração, migração de dados, integração com planilha, treinamento da equipe e QR Codes impressos por setor</div>
+          </div>
+          <div class="sim-price">R$ 700<small>única vez</small></div>
+        </div>
       </div>
-      <p class="plano-desc">Sistema sempre no ar, com suporte técnico, atualizações e hospedagem inclusa. Sem surpresas.</p>
-      <div class="plano-items">
-        <div class="plano-item">Hospedagem na nuvem inclusa</div>
-        <div class="plano-item">Domínio próprio incluso</div>
-        <div class="plano-item">Backup diário automático</div>
-        <div class="plano-item">Suporte técnico prioritário</div>
-        <div class="plano-item">Atualizações de segurança</div>
+
+      <hr class="sim-divider" />
+      <div class="sim-section-label">Manutenção mensal — escolha uma opção</div>
+
+      <div class="sim-item" id="opt-local" onclick="selectOpt('local')">
+        <div class="sim-item-inner">
+          <div class="sim-radio"><div class="sim-radio-dot"></div></div>
+          <div class="sim-info">
+            <div class="sim-name">Local na empresa</div>
+            <div class="sim-desc">Sistema roda no servidor da própria gráfica · Suporte técnico remoto incluso · Ideal para uso interno</div>
+          </div>
+          <div class="sim-price">R$ 200<small>/mês</small></div>
+        </div>
+      </div>
+
+      <div class="sim-item" id="opt-nuvem" onclick="selectOpt('nuvem')">
+        <div class="sim-item-inner">
+          <div class="sim-radio"><div class="sim-radio-dot"></div></div>
+          <div class="sim-info">
+            <div class="sim-name">Nuvem <span class="sim-badge">RECOMENDADO</span></div>
+            <div class="sim-desc">Servidor na nuvem · URL fixa permanente · Acesso de qualquer lugar · Domínio próprio + backup diário incluso</div>
+          </div>
+          <div class="sim-price">R$ 350<small>/mês</small></div>
+        </div>
+      </div>
+
+      <div class="sim-total-bar">
+        <div class="sim-total-info">
+          <div class="sim-total-label">Total do investimento</div>
+          <div class="sim-total-value" id="total-value">Selecione uma opção</div>
+          <div class="sim-total-sub" id="total-sub"></div>
+        </div>
+        <a id="btn-wpp" href="#" class="btn-whatsapp" onclick="abrirWhatsapp(event)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Feche o contrato agora mesmo ou negocie valores!
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <div class="full-border"></div>
 <footer>
   <div>
@@ -705,9 +853,41 @@
   </div>
   <div class="footer-contact">
     Gustavo Santos<br>
-    Gestech · 2026
+    (21) 96607-2028
   </div>
 </footer>
 
+<script>
+  let opcaoSelecionada = null;
+
+  function selectOpt(opt) {
+    opcaoSelecionada = opt;
+    document.getElementById('opt-local').classList.remove('selected');
+    document.getElementById('opt-nuvem').classList.remove('selected');
+    document.getElementById('opt-' + opt).classList.add('selected');
+
+    const mensal = opt === 'local' ? 200 : 350;
+    const label = opt === 'local' ? 'Local na empresa' : 'Nuvem';
+    document.getElementById('total-value').textContent = 'R$ 700 + R$ ' + mensal + '/mês';
+    document.getElementById('total-sub').textContent = 'Implantação única + Manutenção ' + label;
+  }
+
+  function abrirWhatsapp(e) {
+    e.preventDefault();
+    if (!opcaoSelecionada) {
+      alert('Selecione uma opção de manutenção antes de continuar.');
+      return;
+    }
+    const mensal = opcaoSelecionada === 'local' ? 200 : 350;
+    const tipo = opcaoSelecionada === 'local' ? 'Local na empresa' : 'Nuvem';
+    const msg = encodeURIComponent(
+      'Olá Gustavo! Tenho interesse no sistema GZO.\n\n' +
+      '✅ Implantação: R$ 700\n' +
+      '✅ Manutenção (' + tipo + '): R$ ' + mensal + '/mês\n\n' +
+      'Gostaria de saber mais detalhes e fechar o contrato!'
+    );
+    window.open('https://wa.me/5521966072028?text=' + msg, '_blank');
+  }
+</script>
 </body>
 </html>
